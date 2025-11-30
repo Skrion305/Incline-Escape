@@ -1,0 +1,16 @@
+# Wavefront .mtl file  -  created by SpaceDraw
+
+# File created: 17-06-13, 16:14
+
+newmtl rusted
+Ns 60.0
+d 1.0
+Tr 0.0
+illum 2
+Ka 1.0 1.0 1.0 
+Kd 1.0 1.0 1.0 
+Ks 0.39999998 0.39999998 0.39999998 
+Ke 0.0 0.0 0.0 
+map_Ka rusted.jpg
+map_Kd rusted.jpg
+
