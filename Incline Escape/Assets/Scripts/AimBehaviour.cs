@@ -6,10 +6,10 @@ using System.Linq;
 
 public class AimBehaviour : MonoBehaviour
 {
-    [SerializeField] GameObject target;
+    public GameObject target;
     [SerializeField] ARRaycastManager raycastManager;
     [SerializeField] ARPlaneManager planeManager;
-    public ARPlane _currentPlane;
+    public ARPlane currentPlane;
     Camera _mainCamera;
     ARPlane _lockedPlane;
     void Start()
@@ -21,7 +21,7 @@ public class AimBehaviour : MonoBehaviour
         var screenCenter = _mainCamera.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         var hits = new List<ARRaycastHit>();
         raycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinBounds);
-        _currentPlane = null;
+        currentPlane = null;
         ARRaycastHit? hit = hits[0];
         if (hits.Count > 0)
         {
@@ -30,10 +30,10 @@ public class AimBehaviour : MonoBehaviour
         }
         if (hit.HasValue)
         {
-            _currentPlane = planeManager.GetPlane(hit.Value.trackableId);
+            currentPlane = planeManager.GetPlane(hit.Value.trackableId);
             transform.position = hit.Value.pose.position;
         }
-        target.SetActive(_currentPlane != null);
+        target.SetActive(currentPlane != null);
     }
     public void SetLockedPlane(ARPlane keepPlane)
     {
