@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] InputActionReference tapAction;
     [SerializeField] GameObject maze;
     GameObject spawnedObject;
+    [SerializeField] GameObject ballPrefab;
     private void OnEnable()
     {
         tapAction.action.Enable();
@@ -47,10 +48,27 @@ public class Spawner : MonoBehaviour
         {
             spawnedObject.transform.position = hitPose.position;
             spawnedObject.transform.rotation = hitPose.rotation;
+            SpawnBall();
         }
         else
         {
             spawnedObject = Instantiate(maze, hitPose.position, hitPose.rotation);
+            SpawnBall();
         }
+    }
+    void SpawnBall()
+    {
+        if ((ballPrefab == null) || (spawnedObject == null))
+        {
+            return;
+        }
+        Transform oldBall = spawnedObject.transform.Find("Sphere");
+        if (oldBall != null)
+        {
+            Destroy(oldBall.gameObject);
+        }
+        Vector3 local = new Vector3(0f, 6.47f, -4.02f);
+        Vector3 spawn = spawnedObject.transform.TransformPoint(local);
+        GameObject ball = Instantiate(ballPrefab, spawn, Quaternion.identity);
     }
 }
