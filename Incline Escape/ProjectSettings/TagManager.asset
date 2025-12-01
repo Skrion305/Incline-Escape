@@ -8,6 +8,9 @@ TagManager:
   - Exit
   - Victory
   - Audio
+  - Game
+  - Menu
+  - Pause
   layers:
   - Default
   - TransparentFX
