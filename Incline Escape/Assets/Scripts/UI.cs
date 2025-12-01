@@ -8,6 +8,7 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject menu;
     [SerializeField] GameObject pause;
     [SerializeField] GameObject game;
+    [SerializeField] GameObject victory;
     void SetSystemsActive(bool active)
     {
         foreach (var s in scripts)
@@ -31,6 +32,7 @@ public class UI : MonoBehaviour
         menu.SetActive(true);
         game.SetActive(false);
         pause.SetActive(false);
+        victory.SetActive(false);
         Time.timeScale = 1f;
         SetSystemsActive(false);
     }
@@ -39,6 +41,7 @@ public class UI : MonoBehaviour
         menu.SetActive(false);
         game.SetActive(true);
         pause.SetActive(false);
+        victory.SetActive(false);
         Time.timeScale = 1f;
         SetSystemsActive(true);
     }
@@ -47,6 +50,7 @@ public class UI : MonoBehaviour
         menu.SetActive(false);
         game.SetActive(false);
         pause.SetActive(true);
+        victory.SetActive(false);
         Time.timeScale = 0f;
         SetSystemsActive(false);
     }
@@ -55,6 +59,7 @@ public class UI : MonoBehaviour
         menu.SetActive(false);
         game.SetActive(true);
         pause.SetActive(false);
+        victory.SetActive(false);
         Time.timeScale = 1f;
         SetSystemsActive(true);
     }

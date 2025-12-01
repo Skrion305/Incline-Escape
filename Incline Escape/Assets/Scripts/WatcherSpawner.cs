@@ -4,7 +4,7 @@ public class WatcherSpawner : MonoBehaviour
 {
     [SerializeField] AimBehaviour aimBehaviour;
     [SerializeField] GameObject watcherPrefab;
-    [SerializeField] float speed = 1.2f;
+    float speed = 1.2f;
     WatcherBehavior _watcherBehavior;
     void Update()
     {
