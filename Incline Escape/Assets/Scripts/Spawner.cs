@@ -46,13 +46,27 @@ public class Spawner : MonoBehaviour
         var hitPose = arRaycastHits[0].pose;
         if (spawnedObject != null)
         {
-            spawnedObject.transform.position = hitPose.position;
-            spawnedObject.transform.rotation = hitPose.rotation;
+            Transform anchorTransform = spawnedObject.transform.parent;
+            if ((anchorTransform != null) && (anchorTransform.GetComponent<ARAnchor>() != null))
+            {
+                anchorTransform.position = hitPose.position;
+                anchorTransform.rotation = hitPose.rotation;
+            }
+            else
+            {
+                spawnedObject.transform.position = hitPose.position;
+                spawnedObject.transform.rotation = hitPose.rotation;
+            }
             SpawnBall();
         }
         else
         {
-            spawnedObject = Instantiate(maze, hitPose.position, hitPose.rotation);
+            var anchorObject = new GameObject("MazeAnchor");
+            anchorObject.transform.position = hitPose.position + (Vector3.up * 0.5f);
+            anchorObject.transform.rotation = hitPose.rotation;
+            var anchor = anchorObject.AddComponent<ARAnchor>();
+            spawnedObject = Instantiate(maze, hitPose.position + (Vector3.up * 0.5f), hitPose.rotation);
+            spawnedObject.transform.SetParent(anchorObject.transform);
             SpawnBall();
         }
     }
