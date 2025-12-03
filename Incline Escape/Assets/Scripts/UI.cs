@@ -5,11 +5,11 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject xrOrigin;
     [SerializeField] GameObject arSession;
     [SerializeField] MonoBehaviour[] scripts;
-    [SerializeField] GameObject menu;
-    [SerializeField] GameObject pause;
-    [SerializeField] GameObject game;
-    [SerializeField] GameObject victory;
-    void SetSystemsActive(bool active)
+    public GameObject menu;
+    public GameObject pause;
+    public GameObject game;
+    public GameObject victory;
+    public void SetSystemsActive(bool active)
     {
         foreach (var s in scripts)
         {

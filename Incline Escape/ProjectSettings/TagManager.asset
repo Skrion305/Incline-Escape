@@ -6,11 +6,8 @@ TagManager:
   tags:
   - Maze
   - Exit
-  - Victory
   - Audio
-  - Game
-  - Menu
-  - Pause
+  - UI
   layers:
   - Default
   - TransparentFX
