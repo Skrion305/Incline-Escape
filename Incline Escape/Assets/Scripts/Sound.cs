@@ -8,13 +8,10 @@ public class Sound : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
     }
     void Update()
     {
-        if (audioSource != null)
-        {
-            audioSource = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
-        }
         move = rb.linearVelocity.magnitude > 0f;
         if (move && (!audioSource.isPlaying))
         {
