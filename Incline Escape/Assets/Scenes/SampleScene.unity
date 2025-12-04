@@ -639,7 +639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &372428579
@@ -2352,8 +2352,8 @@ MonoBehaviour:
   - {fileID: 1884513494}
   - {fileID: 722103386}
   - {fileID: 6454952237400115868, guid: 351a8f9e7ca1848439b94bf58b217d76, type: 3}
-  - {fileID: 547577472026035603, guid: d60e4c864a251ed4bb7f38bc754a0482, type: 3}
   - {fileID: 7808270263065729504, guid: d60e4c864a251ed4bb7f38bc754a0482, type: 3}
+  - {fileID: 547577472026035603, guid: d60e4c864a251ed4bb7f38bc754a0482, type: 3}
   menu: {fileID: 443912092}
   pause: {fileID: 1253761767}
   game: {fileID: 1500047016}
@@ -2492,7 +2492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1253761769
@@ -3237,7 +3237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500047018
