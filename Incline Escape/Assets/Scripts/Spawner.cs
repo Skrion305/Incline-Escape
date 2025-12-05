@@ -57,7 +57,7 @@ public class Spawner : MonoBehaviour
                 spawnedObject.transform.position = hitPose.position;
                 spawnedObject.transform.rotation = hitPose.rotation;
             }
-            SpawnBall();
+            //SpawnBall();
         }
         else
         {
@@ -67,10 +67,10 @@ public class Spawner : MonoBehaviour
             var anchor = anchorObject.AddComponent<ARAnchor>();
             spawnedObject = Instantiate(maze, hitPose.position, hitPose.rotation);
             spawnedObject.transform.SetParent(anchorObject.transform);
-            SpawnBall();
+            //SpawnBall();
         }
     }
-    void SpawnBall()
+    /*void SpawnBall()
     {
         if ((ballPrefab == null) || (spawnedObject == null))
         {
@@ -88,5 +88,5 @@ public class Spawner : MonoBehaviour
         Vector3 local = new Vector3(0f, 6.8f, -4.7f);
         Vector3 spawn = spawnedObject.transform.TransformPoint(local);
         GameObject ball = Instantiate(ballPrefab, spawn, Quaternion.identity);
-    }
+    }*/
 }

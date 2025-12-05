@@ -22,7 +22,7 @@ public class Maze : MonoBehaviour
             return;
         }
         Quaternion targetRotation = initialRotation * Quaternion.Euler(currentTiltX, 0f, currentTiltZ);
-        mazeTransform.rotation = Quaternion.Slerp(mazeTransform.rotation, targetRotation, 50f * Time.deltaTime);
+        mazeTransform.rotation = Quaternion.Slerp(mazeTransform.rotation, targetRotation, 10f * Time.deltaTime);
     }
     void FindMaze()
     {
@@ -35,18 +35,18 @@ public class Maze : MonoBehaviour
     }
     public void TiltUp()
     {
-        currentTiltZ = Mathf.Clamp(currentTiltZ + 15f, -15f, 15f);
+        currentTiltX = Mathf.Clamp(currentTiltX + 15f, -15f, 15f);
     }
     public void TiltDown()
     {
-        currentTiltZ = Mathf.Clamp(currentTiltZ - 15f, -15f, 15f);
+        currentTiltX = Mathf.Clamp(currentTiltX - 15f, -15f, 15f);
     }
     public void TiltLeft()
     {
-        currentTiltX = Mathf.Clamp(currentTiltX + 15f, -15f, 15f);
+        currentTiltZ = Mathf.Clamp(currentTiltZ + 15f, -15f, 15f);
     }
     public void TiltRight()
     {
-        currentTiltX = Mathf.Clamp(currentTiltX - 15f, -15f, 15f);
+        currentTiltZ = Mathf.Clamp(currentTiltZ - 15f, -15f, 15f);
     }
 }
