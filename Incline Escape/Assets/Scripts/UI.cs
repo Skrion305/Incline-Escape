@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
@@ -29,12 +30,7 @@ public class UI : MonoBehaviour
     }
     public void Menu()
     {
-        game.SetActive(false);
-        pause.SetActive(false);
-        victory.SetActive(false);
-        menu.SetActive(true);
-        Time.timeScale = 1f;
-        SetSystemsActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void StartGame()
     {
