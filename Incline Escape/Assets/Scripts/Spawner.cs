@@ -76,10 +76,14 @@ public class Spawner : MonoBehaviour
         {
             return;
         }
-        Transform oldBall = spawnedObject.transform.Find("Sphere");
-        if (oldBall != null)
+        GameObject oldBallObject = GameObject.FindGameObjectWithTag("Ball");
+        if (oldBallObject != null)
         {
-            Destroy(oldBall.gameObject);
+            Transform oldBall = oldBallObject.transform;
+            if (oldBall != null)
+            {
+                Destroy(oldBall.gameObject);
+            }
         }
         Vector3 local = new Vector3(0f, 6.8f, -4.7f);
         Vector3 spawn = spawnedObject.transform.TransformPoint(local);

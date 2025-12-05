@@ -8,6 +8,7 @@ TagManager:
   - Exit
   - Audio
   - UI
+  - Ball
   layers:
   - Default
   - TransparentFX
