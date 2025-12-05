@@ -22,7 +22,7 @@ public class Maze : MonoBehaviour
             return;
         }
         Quaternion targetRotation = initialRotation * Quaternion.Euler(currentTiltX, 0f, currentTiltZ);
-        mazeTransform.rotation = Quaternion.RotateTowards(mazeTransform.rotation, targetRotation, 50f * Time.deltaTime);
+        mazeTransform.rotation = Quaternion.Slerp(mazeTransform.rotation, targetRotation, 50f * Time.deltaTime);
     }
     void FindMaze()
     {
